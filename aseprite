@@ -32,3 +32,15 @@ url=$(curl -s https://api.github.com/repos/aseprite/aseprite/releases/latest | g
 version=$(curl -s https://api.github.com/repos/aseprite/aseprite/releases/latest | grep tag_name | cut -d '"' -f 4)
 echo "Version: $version"
 echo "URL: $url"
+
+echo "Checking Brew..."
+echo -n "Brew:"
+if [[ $(command -v brew) == "" ]]; then
+    echo "⛔ Not Installed"
+    #echo "Installing Hombrew"
+    #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    echo "✅ Installed"
+    #echo "Updating Homebrew"
+    #brew update
+fi
