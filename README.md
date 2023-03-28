@@ -3,6 +3,7 @@ Aseprite latest version online compiler
 
 Old Version
 
+```bash
 #!/bin/bash
 
 #is brew installed? if not, install it
@@ -62,4 +63,4 @@ rm -rf Aseprite
 echo "Please check your 'Applications' folder for Aseprite App"
 
 
-
+```
