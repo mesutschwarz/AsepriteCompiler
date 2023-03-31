@@ -1,13 +1,72 @@
 #!/bin/bash
+
+echo "╔═════════════════════════════════════════════════╗"
+echo "║            ASEPRITE Compiler Script             ║"
+echo "╚═════════════════════════════════════════════════╝"
+echo " Prerequisites:"           
+
+
+# Variables
+#       preq_os : Operating System 
+#       preq_cpu : CPU Archtitecture
 os=$(uname)
+cpu=$(uname -m)
+
+
+
+
+
+
+
+
+
+
+# Functions
 darwin() { 
-    echo "OS:✅  You're using macOS $os"
+    # macOS
+    echo "  OS:✅ $os"
+    preq_os=1
 }
+
+linux() {
+    # Linux
+    echo "  OS:⚠️ $os"
+    preq_os=0
+}
+
+otheros() {
+    # Other OS
+    echo "  OS:⛔ $os"
+    preq_os=0
+}
+
 
 
 echo "Checking OS..."
 if [ $os == "Darwin" ]
 then darwin
-else
-    echo "OS:⛔ You're using $os. You can't install this version"
+elif [ $os == "Linux" ]
+then linux
+else otheros
 fi
+
+echo "Checking CPU Architecture..."
+if [[ $cpu == "arm64" ]]
+then
+    echo "  CPU:✅ $cpu"
+    preq_cpu=1
+else
+    echo "  CPU:⛔ $cpu."
+    preq_cpu=0
+fi
+
+
+echo "==========================================="
+echo " Prerequisites Report :::"
+
+echo -n "OS : "
+[[ $preq_os -eq 1 ]]  && echo "OK" || echo "No"
+
+echo -n "CPU : "
+[[ $preq_cpu -eq 1 ]]  && echo "OK" || echo "No"
+echo "==========================================="

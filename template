@@ -1,11 +1,24 @@
 #!/bin/bash
 
+# Variables
+os=$(uname)
 
-╔═════════════════════════════════════════════════╗
-║            ASEPRITE Compiler Script             ║
-╚═════════════════════════════════════════════════╝
- Prerequisites:                     
- ✅OS: GreenOS
+# Functions
+darwin() { 
+    echo "OS:✅  $os"
+}
+
+linux() {
+    echo "OS:⛔ $os"
+}
+
+
+
+echo "╔═════════════════════════════════════════════════╗"
+echo "║            ASEPRITE Compiler Script             ║"
+echo "╚═════════════════════════════════════════════════╝"
+echo " Prerequisites:"                     
+
 
 
 
