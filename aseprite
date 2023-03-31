@@ -66,9 +66,18 @@ else
 fi
 
 echo "Checking Xcode..."
-if [ $isxcode == "" ]
-then
-    echo "OS:⛔  You dont have /Applications/Xcode"
+isxcode=$(ls -l /Applications | grep -i Xcode)
+echo $isxcode
+
+if [[ $(ls -l /Applications | grep -i Xcode) == "" ]]; then
+    echo "⛔ Xcode Not Installed"
 else
-    echo "OS:✅ You have /Applications/Xcode"
+    echo "✅ Xcode Installed"
 fi
+
+# if [ $isxcode == "" ]
+# then
+#     echo "OS:⛔  You dont have /Applications/Xcode"
+# else
+#     echo "OS:✅ You have /Applications/Xcode"
+# fi
