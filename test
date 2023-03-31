@@ -150,3 +150,5 @@ echo -n "OS : "
 echo -n "CPU : "
 [[ $preq_cpu -eq 1 ]]  && echo "OK" || echo "No"
 echo "==========================================="
+
+echo "What will I do?"
