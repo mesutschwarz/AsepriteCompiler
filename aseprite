@@ -33,17 +33,7 @@ version=$(curl -s https://api.github.com/repos/aseprite/aseprite/releases/latest
 echo "Version: $version"
 echo "URL: $url"
 
-echo "Checking Brew..."
-echo -n "Brew:"
-if [[ $(command -v brew) == "" ]]; then
-    echo "⛔ Not Installed"
-    #echo "Installing Hombrew"
-    #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
-    echo "✅ Installed"
-    #echo "Updating Homebrew"
-    #brew update
-fi
+
 
 echo "Checking OS..."
 if [ $os == "Darwin" ]
@@ -62,3 +52,23 @@ else
     echo "OS:⛔ Your CPU is $cpu. You can't install this version"
 fi
 
+
+echo "Checking Brew..."
+echo -n "Brew:"
+if [[ $(command -v brew) == "" ]]; then
+    echo "⛔ Not Installed"
+    #echo "Installing Hombrew"
+    #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    echo "✅ Installed"
+    #echo "Updating Homebrew"
+    #brew update
+fi
+
+echo "Checking Xcode..."
+if [ $isxcode == "" ]
+then
+    echo "OS:⛔  You dont have /Applications/Xcode"
+else
+    echo "OS:✅ You have /Applications/Xcode"
+fi
