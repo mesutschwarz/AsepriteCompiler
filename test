@@ -1,11 +1,9 @@
 #!/bin/bash
 
-number=500
-win=500
 
-if [ $number -eq $win ]
+if [[ -d "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk" ]]
 then
-    echo "You Win! Your Number ($number) is $win"
+    echo "OK"
 else
-    echo "Yo Lose! Number ($number) is not $win"
+    echo "FAIL"
 fi

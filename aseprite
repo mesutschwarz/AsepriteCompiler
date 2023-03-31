@@ -66,11 +66,11 @@ else
 fi
 
 echo "Checking Xcode..."
-# if [[ $(ls -l /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk) == "" ]]; then
-#     echo "⛔ Xcode Not Installed"
-# else
-#     echo "✅ Xcode Installed"
-# fi
+if [[ $(ls -l /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk) == "" ]]; then
+    echo "⛔ Xcode Not Installed"
+else
+    echo "✅ Xcode Installed"
+fi
 
 if [[ -f "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk" ]]
 then
