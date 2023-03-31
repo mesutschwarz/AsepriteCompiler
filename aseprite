@@ -48,7 +48,17 @@ fi
 echo "Checking OS..."
 if [ $os == "Darwin" ]
 then
-    echo "OS:✅  You're using macOS $os"
+    echo "OS:✅  You're using macOS $cpu"
 else
     echo "OS:⛔ You're using $os. You can't install this version"
 fi
+
+
+echo "Checking CPU..."
+if [ $cpu == "arm64" ]
+then
+    echo "OS:✅  You're using Silicon Mac $cpu"
+else
+    echo "OS:⛔ Your CPU is $cpu. You can't install this version"
+fi
+
