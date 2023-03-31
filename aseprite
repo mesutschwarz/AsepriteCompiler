@@ -72,9 +72,10 @@ else
     echo "✅ Xcode Installed"
 fi
 
-if [[ -f "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk" ]]
+echo "Checking Xcode/macOS SDK..."
+if [[ -d "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk" ]]
 then
-    echo "✅ MaOS SDK Detected."
+    echo "✅ MacOS SDK Detected."
 else
     echo "⛔ MacOS SDK Failed!!!"
 fi
