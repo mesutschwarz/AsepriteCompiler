@@ -1,15 +1,11 @@
 #!/bin/bash
 
+darwin() {    echo "OS:✅  You're using macOS $os" }
 os=$(uname)
 
 echo "Checking OS..."
 if [ $os == "Darwin" ]
-then
-    darwin()
+then darwin
 else
     echo "OS:⛔ You're using $os. You can't install this version"
 fi
-
-
-
-darwin() {    echo "OS:✅  You're using macOS $os" }
