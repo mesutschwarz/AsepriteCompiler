@@ -44,3 +44,5 @@ else
     #echo "Updating Homebrew"
     #brew update
 fi
+
+echo "Checking Os??"
