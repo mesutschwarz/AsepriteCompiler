@@ -1,0 +1,11 @@
+#!/bin/bash
+
+number=500
+win=500
+
+if [ $number -eq $win ]
+then
+    echo "You Win! Your Number ($number) is $win"
+else
+    echo "Yo Lose! Number ($number) is not $win"
+fi
