@@ -1,9 +1,17 @@
 #!/bin/bash
 
+os=$(uname)
 
-if [[ -d "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk" ]]
+echo "Checking OS..."
+if [ $os == "Darwin" ]
 then
-    echo "OK"
+    $(darwin)
 else
-    echo "FAIL"
+    echo "OS:⛔ You're using $os. You can't install this version"
 fi
+
+
+
+darwin(){
+    echo "OS:✅  You're using macOS $os"
+}
