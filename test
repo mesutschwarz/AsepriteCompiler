@@ -1,7 +1,7 @@
 #!/bin/bash
-
-darwin() {    echo "OS:✅  You're using macOS $os" }
 os=$(uname)
+darwin() {    echo "OS:✅  You're using macOS $os" }
+
 
 echo "Checking OS..."
 if [ $os == "Darwin" ]
