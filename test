@@ -105,6 +105,8 @@ darwin() {
     # macOS
     echo -e "  OS:✅ $Green$os$Reset"
     preq_os=1
+
+
 }
 
 linux() {
@@ -139,16 +141,37 @@ else
     preq_cpu=0
 fi
 
+
+
+
+#echo "Checking Brew..."
+if [[ $(command -v brew) == "" ]]; then
+    echo -e "Brew: ⛔$Red Not Installed$Reset"
+    #echo "Installing Hombrew"
+    #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    preq_brew=0
+else
+    echo -e "Brew: ✅$Green Installed$Reset"
+    preq_brew=1
+    #echo "Updating Homebrew"
+    #brew update
+fi
+
+
      
 
 echo "==========================================="
 echo " Prerequisites Report :::"
 
-echo -n "OS : "
+echo -n "OS: "
 [[ $preq_os -eq 1 ]]  && echo "OK" || echo "No"
 
-echo -n "CPU : "
+echo -n "CPU: "
 [[ $preq_cpu -eq 1 ]]  && echo "OK" || echo "No"
+
+echo -n "Brew: "
+[[ $preq_brew -eq 1 ]]  && echo "OK" || echo "No"
+
 echo "==========================================="
 
 echo "What will I do? sometimes"
