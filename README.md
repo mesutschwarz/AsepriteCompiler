@@ -1,5 +1,5 @@
-# AsepriteCompiler
-Aseprite latest version online compiler 
+# Aseprite Compiler for macOS (ARM64) 
+Aseprite latest beta version online compiler 
 
 Download and run build-beta.sh on Terminal
 ```
