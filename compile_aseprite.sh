@@ -15,9 +15,9 @@ mkdir $HOME/Aseprite
 cd $HOME/Aseprite
 
 
-# download skia m102
+# download skia m124
 curl -O -L "https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-macOS-Release-arm64.zip"
-unzip Skia-macOS-Release-arm64.zip -d skia-m102
+unzip Skia-macOS-Release-arm64.zip -d skia-m124
 rm Skia-macOS-Release-arm64.zip
 
 # this is the project itselft
@@ -40,7 +40,7 @@ cd aseprite
 mkdir build
 cd build
 
-cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -DLAF_BACKEND=skia -DSKIA_DIR=$HOME/Aseprite/skia-m102 -DSKIA_LIBRARY_DIR=$HOME/Aseprite/skia-m102/out/Release-arm64 -DSKIA_LIBRARY=$HOME/Aseprite/skia-m102/out/Release-arm64/libskia.a -DPNG_ARM_NEON:STRING=on -G Ninja ..
+cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -DLAF_BACKEND=skia -DSKIA_DIR=$HOME/Aseprite/skia-m124 -DSKIA_LIBRARY_DIR=$HOME/Aseprite/skia-m124/out/Release-arm64 -DSKIA_LIBRARY=$HOME/Aseprite/skia-m124/out/Release-arm64/libskia.a -DPNG_ARM_NEON:STRING=on -G Ninja ..
 
 
 ninja aseprite
