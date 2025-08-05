@@ -16,7 +16,7 @@ cd $HOME/Aseprite
 
 
 # download skia m102
-curl -O -L "https://github.com/aseprite/skia/releases/download/m102-861e4743af/Skia-macOS-Release-arm64.zip"
+curl -O -L "https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-macOS-Release-arm64.zip"
 unzip Skia-macOS-Release-arm64.zip -d skia-m102
 rm Skia-macOS-Release-arm64.zip
 
@@ -25,6 +25,10 @@ url=$(curl -s https://api.github.com/repos/aseprite/aseprite/releases/latest | g
 filename=$(curl -s https://api.github.com/repos/aseprite/aseprite/releases/latest | grep name | cut -d '"' -f 4 | sed -n 4p)
 echo "URL: $url"
 echo "File Name: $filename"
+
+# Extract version number from the filename
+version=$(echo "$filename" | sed -E 's/Aseprite-(v[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)-Source\.zip/\1/')
+echo "Version: $version"
 
 
 curl -O -L $url
@@ -45,23 +49,19 @@ cd ../..
 # bundle app from trial
 mkdir bundle
 cd bundle
-curl -O -J "https://www.aseprite.org/downloads/trial/Aseprite-v1.2.40-trial-macOS.dmg"
+curl -O -J "https://aseprite.org/downloads/trial/Aseprite-${version}-trial-macOS.dmg"
 mkdir mount
-yes qy | hdiutil attach -quiet -nobrowse -noverify -noautoopen -mountpoint mount Aseprite-v1.2.40-trial-macOS.dmg
+yes qy | hdiutil attach -quiet -nobrowse -noverify -noautoopen -mountpoint mount Aseprite-${version}-trial-macOS.dmg
 cp -r mount/Aseprite.app .
 hdiutil detach mount
 rm -rf Aseprite.app/Contents/MacOS/aseprite
 cp -r ../aseprite/build/bin/aseprite Aseprite.app/Contents/MacOS/aseprite
 rm -rf Aseprite.app/Contents/Resources/data
 cp -r ../aseprite/build/bin/data Aseprite.app/Contents/Resources/data
-cd .. 
+
 
 # Install on /Applications
-sudo cp -R bundle/Aseprite.app /Applications/
+sudo cp -R Aseprite.app /Applications/
 cd $HOME
 rm -rf Aseprite
 echo "Please check your 'Applications' folder for Aseprite App"
-
-
-
-
