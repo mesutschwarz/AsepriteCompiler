@@ -10,13 +10,7 @@ On my 2020 Macbook Air M1 computer, homebrew and xcode-cli-tools were installed 
 
 ### Prerequisites
 
-Before you run the script, ensure you have the following installed:
-
-  * **Xcode Command Line Tools:** If you don't have them, you can install them by running:
-
-    ```bash
-    xcode-select --install
-    ```
+  *  **Silicon CPU Support:** The script is designed to work on macOS systems with Apple Silicon (M1, M2, etc.) chips.
 
   * **Homebrew:** The script will automatically install Homebrew if it's not present on your system. However, for a smoother experience, it's recommended to install it beforehand.
 
@@ -58,5 +52,5 @@ If you encounter any issues during the compilation process, consider the followi
 
   * **Internet Connection:** Ensure you have a stable internet connection for downloading the necessary files.
   * **Permissions:** The script will prompt for your password when installing the application. Make sure you enter it correctly.
-  * **Xcode Update:** If you've recently updated Xcode, it might be necessary to run `xcode-select --install` again to ensure the command line tools are up to date.
   * **Hardcoded paths:** The script assumes the default Xcode installation path: `/Applications/Xcode.app`. If your Xcode is installed in a different location, you'll need to modify the `cmake` command in the script accordingly.
+  * **Dont forget Aseprite open:** When you run the script, make sure that Aseprite is not running. If it is, the script will fail to copy the new version into the `/Applications` folder.
