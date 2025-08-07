@@ -1,5 +1,7 @@
 # Aseprite Compiler for macOS (ARM64) 
 
+[Download compile_aseprite.sh](https://raw.githubusercontent.com/mesutschwarz/AsepriteCompiler/refs/heads/main/compile_aseprite.sh)
+
 ## Compiling Aseprite on macOS Apple Silicon 💻
 
 This script automates the entire process of compiling the latest version of **Aseprite** from its source code for macOS with Apple Silicon (M-series) chips. It handles all necessary dependencies, downloads (including the latest Skia release automatically), and compilation steps, resulting in a fully working Aseprite application ready to be used.
