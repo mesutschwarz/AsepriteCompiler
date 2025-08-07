@@ -1,6 +1,6 @@
 # Aseprite Compiler for macOS (ARM64) 
 
-[Download compile_aseprite.sh](https://raw.githubusercontent.com/mesutschwarz/AsepriteCompiler/refs/heads/main/compile_aseprite.sh)
+Right click and select "Save Link As..." to download >> [compile_aseprite.sh](https://raw.githubusercontent.com/mesutschwarz/AsepriteCompiler/refs/heads/main/compile_aseprite.sh)
 
 ## Compiling Aseprite on macOS Apple Silicon 💻
 
