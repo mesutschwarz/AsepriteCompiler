@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Check if full Xcode.app is installed
+if [ ! -d "/Applications/Xcode.app" ]; then
+  echo "Error: Xcode.app is not installed in /Applications."
+  echo "Please install Xcode from the App Store before running this script."
+  exit 1
+fi
+
 #is brew installed? if not, install it
 command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 
