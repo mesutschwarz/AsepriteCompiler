@@ -20,7 +20,7 @@ On my 2020 Macbook Air M1 computer, Homebrew and Xcode.app were installed and al
 
 ### How to Use the Script
 
-1.  **Save the script:** Copy the provided script and save it as a file named `compile_aseprite.sh`.
+1.  **Save the script:** Copy the provided script and save it as a file named [compile_aseprite.sh](https://raw.githubusercontent.com/mesutschwarz/AsepriteCompiler/refs/heads/main/compile_aseprite.sh)
 2.  **Make it executable:** Open your Terminal and make the script executable with the following command:
     ```bash
     chmod +x compile_aseprite.sh
